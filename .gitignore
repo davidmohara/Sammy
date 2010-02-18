@@ -1,0 +1,9 @@
+TestResult.xml
+*.suo
+*.cache
+*.user
+obj
+bin
+*~
+*.swp
+build/
