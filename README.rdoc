@@ -1,0 +1,2 @@
+= Sammy
+Sammy is a micro-framework for building web applications in C#. It's basically a rip-off of Sinatra that uses Kayak and NHaml.
