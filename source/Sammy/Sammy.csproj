@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="dotless.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\dotless\dotless.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Kayak, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\libs\kayak\Kayak.dll</HintPath>
@@ -62,9 +66,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SammyService.cs" />
     <Compile Include="SammyView.cs" />
-    <Compile Include="SampleService.cs" />
+    <Compile Include="Sample.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="styles\styles.less" />
     <None Include="views\_child.haml" />
     <None Include="views\index.haml" />
   </ItemGroup>

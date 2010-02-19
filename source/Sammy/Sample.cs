@@ -2,13 +2,19 @@ using Kayak.Framework;
 
 namespace Sammy
 {
-	public class SampleService : SammyService
+	public class Sample : SammyService
 	{
-		[Path("/")]
+        [Path("/")]
 		public void Index()
 		{
 			ViewData["element"] = System.DateTime.Now;
 			NHaml("index");
+		}
+
+		[Path("/styles.css")]
+		public void Style()
+		{
+			Less("styles");
 		}
 	}
 }
