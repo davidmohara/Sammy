@@ -3,11 +3,12 @@
 require 'scripts/msbuildtask'
 
 CONFIG = 'Debug'
-SOLUTION = 'bogart.sln'
+SOLUTION = 'source/Sammy.sln'
 PACKAGE_PATH = 'build/package'
-HARVEST_TARGETS = ["Bogart"]
+HARVEST_TARGET_PROJECTS = ["Sammy"]
+HARVEST_TARGET_EXTENSIONS = ["dll", "pdb", "exe"]
 
-task :default => ['build:compile']
+task :default => ['build:harvest']
 task :test => ['build:unit_test']
 
 namespace :build do
@@ -16,16 +17,21 @@ namespace :build do
   end
 
   desc "Harvest build outputs to: '#{pwd}/#{PACKAGE_PATH}'"
-  task :harvest => [:compile] do
+  task :harvest do #=> [:compile] do
 	  rm_r PACKAGE_PATH if File.directory?(PACKAGE_PATH)
 	  mkdir_p PACKAGE_PATH
-	  HARVEST_TARGETS.each do |project|
-		  location = "#{project}/bin/#{CONFIG}"
-		  files = Dir.glob("#{location}/*.dll") + Dir.glob("#{location}/*.pdb")
-		  files.each do |item|
-			  puts "Copying #{item}..."
+	  HARVEST_TARGET_PROJECTS.each do |project|
+		  location = "source/#{project}"
+		  binaries = []
+		  HARVEST_TARGET_EXTENSIONS.each do |ext|
+			binaries += Dir.glob("#{location}/bin/*.#{ext}")
+		  end
+		  puts "Copying binaries..."
+		  binaries.each do |item|
 			  cp item, "#{PACKAGE_PATH}"
 			end
+		  puts "Copying all views..."
+		  cp_r "#{location}/views", "#{PACKAGE_PATH}/views"
 	  end
   end
   
