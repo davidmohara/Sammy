@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Net;
 using Kayak;
 using Kayak.Framework;
@@ -12,9 +13,14 @@ namespace Sammy
 			KayakServer server = new KayakServer();
 			server.UseFramework();
 			server.Start(new System.Net.IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000));
+			server.MapDirectory("/public", Path.Combine(Environment.CurrentDirectory, "../public"));
 			Console.WriteLine("Sammy has begun on port 3000");
-			Console.WriteLine("Press any key to exit");
-			Console.ReadKey();
+			Console.WriteLine("Press Control-Z to exit");
+			ConsoleKeyInfo key = Console.ReadKey();
+			while (!(key.Key == ConsoleKey.Z && key.Modifiers == ConsoleModifiers.Control))
+			{
+				key = Console.ReadKey();
+			}
 			server.Stop();
 		}
 	}

@@ -69,6 +69,7 @@
     <Compile Include="Sample.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="public\favicon.ico" />
     <None Include="styles\styles.less" />
     <None Include="views\_child.haml" />
     <None Include="views\index.haml" />
