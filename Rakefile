@@ -38,7 +38,13 @@ namespace :build do
   desc "Grab dependencies"
   task :grab_deps do
 	puts "Grabbing Kayak from built source..."
-	cp_r "../kayak/build/package/", "libs/kayak"
+	cp_r "../kayak/build/package", "libs/kayak"
+
+	path = "../topshelf/build_output/"
+	puts "Grabbing Topshelf from built source..."
+	cp "#{path}Magnum.dll", "libs/topshelf"
+	cp "#{path}Topshelf.dll", "libs/topshelf"
+	cp "#{path}Topshelf.pdb", "libs/topshelf"
   end
 
   Rake::MsbuildTask.new do |build|
