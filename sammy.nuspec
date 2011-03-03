@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<package> 
+  <metadata> 
+    <id>sammy</id> 
+    <version>0.0.6</version> 
+    <authors>David O'Hara</authors>
+    <description>
+      Sammy is a micro-framework for building web applications in C#. It's basically a rip-off of Sinatra that builds off of Knack (an OWIN implementation).
+    </description> 
+    <language>en-US</language>
+    <licenseUrl>http://github.com/davidmohara/sammy/license</licenseUrl>
+    <projectUrl>http://github.com/davidmohara/sammy</projectUrl>
+  </metadata> 
+  <files>
+    <file src="Sammy.Common\bin\Debug\*.dll" target="lib" />
+  </files>
+</package>
