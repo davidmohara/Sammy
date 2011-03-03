@@ -1,2 +1,2 @@
 = Sammy
-Sammy is a micro-framework for building web applications in C#. It's basically a rip-off of Sinatra that uses Kayak and NHaml.
+Sammy is a micro-framework for building web applications in C#. It's basically a rip-off of Sinatra that uses Knack (an OWIN implementation) and NHaml. It is not really ready for prime-time but certainly will run. Give it a shot on AppHarbor (http://appharbor.com) as well.
