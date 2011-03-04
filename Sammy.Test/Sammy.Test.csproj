@@ -32,22 +32,22 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Castle.Core">
-      <HintPath>..\..\lib\castle\Castle.Core.dll</HintPath>
+      <HintPath>..\lib\castle\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Windsor">
-      <HintPath>..\..\lib\castle\Castle.Windsor.dll</HintPath>
+      <HintPath>..\lib\castle\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>..\..\lib\nunit\framework\nunit.framework.dll</HintPath>
+      <HintPath>..\lib\nunit\framework\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="owin">
-      <HintPath>..\..\lib\owin\owin.dll</HintPath>
+      <HintPath>..\lib\owin\owin.dll</HintPath>
     </Reference>
     <Reference Include="Owin.Common">
-      <HintPath>..\..\lib\owin\Owin.Common.dll</HintPath>
+      <HintPath>..\lib\owin\Owin.Common.dll</HintPath>
     </Reference>
     <Reference Include="Rhino.Mocks">
-      <HintPath>..\..\lib\rhino\Rhino.Mocks.dll</HintPath>
+      <HintPath>..\lib\rhino\Rhino.Mocks.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -41,7 +41,7 @@
       <HintPath>..\..\lib\castle\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="Improving.Core">
-      <HintPath>..\..\lib\improving\Improving.Core.dll</HintPath>
+      <HintPath>..\lib\improving\Improving.Core.dll</HintPath>
     </Reference>
     <Reference Include="owin">
       <HintPath>..\..\lib\owin\owin.dll</HintPath>
@@ -50,7 +50,7 @@
       <HintPath>..\..\lib\owin\Owin.Common.dll</HintPath>
     </Reference>
     <Reference Include="Owin.Handlers.AspNet">
-      <HintPath>..\..\lib\owin\Owin.Handlers.AspNet.dll</HintPath>
+      <HintPath>..\lib\owin\Owin.Handlers.AspNet.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages" />
