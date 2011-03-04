@@ -9,6 +9,7 @@ end
 CONFIG = 'Debug'
 SOLUTION = expand('/Sammy.sln')
 NUNIT_CONSOLE = expand('/lib/NUnit/nunit-console.exe')
+PACKAGE_PATH = 'build/package'
 
 TEST_DLLS = Dir.glob('*Test').collect{|dll| File.join(dll, 'bin', CONFIG, dll + '.dll')}
 
@@ -28,5 +29,16 @@ namespace :build do
     nunit.options '/exclude="Integration"'
     nunit.assemblies TEST_DLLS
     nunit.command = NUNIT_CONSOLE
+  end
+
+  desc "Create NuGet package"
+  task :nuget, :target do |t, args|
+    args.with_defaults(:target => PACKAGE_PATH)
+    mkdir_p args[:target]
+    sh "tools/nuget pack sammy.nuspec -o #{args[:target]}"
+  end
+
+  task :nuget_local do
+    Rake::Task['build:nuget'].invoke '../packages'
   end
 end

@@ -8,6 +8,7 @@
       Sammy is a micro-framework for building web applications in C#. It's basically a rip-off of Sinatra that builds off of Knack (an OWIN implementation).
     </description> 
     <language>en-US</language>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>http://github.com/davidmohara/sammy/license</licenseUrl>
     <projectUrl>http://github.com/davidmohara/sammy</projectUrl>
   </metadata> 
